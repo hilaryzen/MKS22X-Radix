@@ -46,6 +46,13 @@ public class MyLinkedList<E> {
 		length = 0;
 	}
 
+  //Reset list to empty state
+  public void clear() {
+    length = 0;
+    start = null;
+    end = null;
+  }
+
   public int size() {
     return length;
   }
