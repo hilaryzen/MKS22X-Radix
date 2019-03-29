@@ -15,5 +15,11 @@ public class Driver {
     list.removeFront();
     System.out.println(list.size());
     System.out.println(list);
+
+    System.out.println(" ");
+    MyLinkedList<Integer> list2 = new MyLinkedList<Integer>();
+    list2.add(2);
+    list2.add(1);
+    System.out.println(list2);
   }
 }
