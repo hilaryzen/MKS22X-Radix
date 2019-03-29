@@ -26,5 +26,14 @@ public class Driver {
     list.extend(list2);
     System.out.println(list.size());
     System.out.println(list);
+
+    System.out.println(" ");
+    MyLinkedList<Integer> list3 = new MyLinkedList<Integer>();
+    list3.add(4);
+    list3.add(5);
+    list3.add(6);
+    list.extend(list3);
+    System.out.println(list.size());
+    System.out.println(list);
   }
 }
