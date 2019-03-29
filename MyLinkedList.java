@@ -74,4 +74,16 @@ public class MyLinkedList<E> {
 		}
 		return true;
 	}
+
+  //Connects two linked lists
+  public void extend(MyLinkedList<E> other) {
+		end.setNext(other.start);
+		other.start.setPrev(end);
+		end = other.end;
+		length = size() + other.size();
+		other.length = 0;
+		other.start = null;
+		other.end = null;
+	}
+
 }
