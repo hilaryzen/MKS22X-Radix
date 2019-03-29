@@ -21,5 +21,10 @@ public class Driver {
     list2.add(2);
     list2.add(1);
     System.out.println(list2);
+
+    System.out.println(" ");
+    list.extend(list2);
+    System.out.println(list.size());
+    System.out.println(list);
   }
 }
