@@ -57,6 +57,20 @@ public class MyLinkedList<E> {
     return length;
   }
 
+  public String toString() {
+    if (start == null) {
+			return "[]";
+		}
+		Node current = start;
+		String ans = "[" + current.getData();
+		//Loops through elements using their index
+		for (int i = 1; i < size(); i++) {
+			current = current.next();
+			ans += ", " + current.getData();
+		}
+		return ans + "]";
+  }
+
   //Adds a node at the end of the list
 	public boolean add(E value) {
 		Node newNode = new Node(value);
