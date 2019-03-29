@@ -10,5 +10,10 @@ public class Driver {
     list.add(3);
     System.out.println(list.size());
     System.out.println(list);
+
+    list.removeFront();
+    list.removeFront();
+    System.out.println(list.size());
+    System.out.println(list);
   }
 }

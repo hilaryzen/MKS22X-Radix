@@ -110,6 +110,7 @@ public class MyLinkedList<E> {
       start = start.next();
       start.setPrev(null);
     }
+    length--;
     return old;
   }
 
