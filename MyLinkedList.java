@@ -86,4 +86,17 @@ public class MyLinkedList<E> {
 		other.end = null;
 	}
 
+  //Removes the first element
+  public E removeFront() {
+    E old = start.getData();
+    if (size() == 1) {
+      start = null;
+      end = null;
+    } else {
+      start = start.getNext();
+      start.setPrev(null);
+    }
+    return old;
+  }
+
 }
