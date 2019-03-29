@@ -93,7 +93,7 @@ public class MyLinkedList<E> {
       start = null;
       end = null;
     } else {
-      start = start.getNext();
+      start = start.next();
       start.setPrev(null);
     }
     return old;
