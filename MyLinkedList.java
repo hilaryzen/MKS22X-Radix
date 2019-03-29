@@ -38,4 +38,33 @@ public class MyLinkedList<E> {
 	  }
   }
 
+  private int length;
+	private Node start,end;
+
+	//Empty list constructor
+	public MyLinkedList() {
+		length = 0;
+	}
+
+  public int size() {
+    return length;
+  }
+
+  //Adds a node at the end of the list
+	public boolean add(E value) {
+		Node newNode = new Node(value);
+		if (size() == 0) {
+			//The new node becomes the start and end
+			start = newNode;
+			end = newNode;
+			length = 1;
+		} else {
+			newNode.setPrev(end);
+			length += 1;
+			end.setNext(newNode);
+			//The new node becomes the end
+			end = newNode;
+		}
+		return true;
+	}
 }
