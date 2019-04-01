@@ -1,5 +1,6 @@
 public class Driver {
   public static void main(String[] args) {
+    /*
     MyLinkedList<Integer> list = new MyLinkedList<Integer>();
     System.out.println(list.size());
 
@@ -35,5 +36,9 @@ public class Driver {
     list.extend(list3);
     System.out.println(list.size());
     System.out.println(list);
+    */
+
+    int[] data = {3, 22, 4, 19, 11};
+    Radix.radixsort(data);
   }
 }
