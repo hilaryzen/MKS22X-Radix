@@ -14,5 +14,6 @@ public class Radix {
       System.out.println(bucket); //Debugging
       numbers.extend(bucket);
     }
+    System.out.println(numbers);
   }
 }
