@@ -91,13 +91,23 @@ public class MyLinkedList<E> {
 
   //Connects two linked lists
   public void extend(MyLinkedList<E> other) {
-		end.setNext(other.start);
-		other.start.setPrev(end);
-		end = other.end;
-		length = size() + other.size();
-		other.length = 0;
-		other.start = null;
-		other.end = null;
+    if (this.size() == 0) {
+      start = other.start;
+      end = other.end;
+      length = other.size();
+      other.length = 0;
+      other.start = null;
+      other.end = null;
+    }
+    if (other.start != null) {
+      end.setNext(other.start);
+  		other.start.setPrev(end);
+  		end = other.end;
+  		length = size() + other.size();
+  		other.length = 0;
+  		other.start = null;
+  		other.end = null;
+    }
 	}
 
   //Removes the first element

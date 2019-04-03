@@ -1,14 +1,18 @@
-import java.util.ArrayList;
-
 public class Radix {
   public static void radixsort(int[] data) {
-    ArrayList<MyLinkedList> buckets = new ArrayList<MyLinkedList>();
+    MyLinkedList<Integer>[] buckets = new MyLinkedList[10];
     for (int i = 0; i < 10; i++) {
-      buckets.add(new MyLinkedList<Integer>());
+      buckets[i] = new MyLinkedList<Integer>();
     }
-    for (int num = 0; num < data.length; num++) {
-      buckets.get(data[num] % 10).add(data[num]);
+    MyLinkedList<Integer> numbers = new MyLinkedList<Integer>();
+    //System.out.println(numbers);
+
+    for (int num : data) {
+      buckets[num % 10].add(num);
     }
-    System.out.println(buckets);
+    for (MyLinkedList<Integer> bucket : buckets) {
+      System.out.println(bucket); //Debugging
+      numbers.extend(bucket);
+    }
   }
 }
