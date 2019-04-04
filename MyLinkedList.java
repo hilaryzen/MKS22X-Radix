@@ -40,6 +40,7 @@ public class MyLinkedList<E> {
 
   private int length;
 	private Node start,end;
+  private Node currentNode;
 
 	//Empty list constructor
 	public MyLinkedList() {
@@ -79,6 +80,7 @@ public class MyLinkedList<E> {
 			start = newNode;
 			end = newNode;
 			length = 1;
+      currentNode = start;
 		} else {
 			newNode.setPrev(end);
 			length += 1;
@@ -122,6 +124,15 @@ public class MyLinkedList<E> {
     }
     length--;
     return old;
+  }
+
+  public boolean hasNext() {
+    return (currentNode.next() != null);
+  }
+
+  public E next() {
+    currentNode = currentNode.next();
+    return currentNode.getData();
   }
 
 }
