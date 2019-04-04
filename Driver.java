@@ -38,7 +38,7 @@ public class Driver {
     System.out.println(list);
     */
 
-
+    /*
     MyLinkedList<Integer> list3 = new MyLinkedList<Integer>();
     list3.add(4);
     list3.add(5);
@@ -50,9 +50,9 @@ public class Driver {
     while (list4.hasNext()) {
       System.out.println(list4.next());
     }
+    */
 
-
-    int[] data = {3, 22, 4, 19, 11, 9, 42, 20};
+    int[] data = {3, 22, 4, 19, 11, 9, 42, 20, 107};
     Radix.radixsort(data);
   }
 }
