@@ -22,7 +22,7 @@ public class Radix {
     }
     //System.out.println(length);
 
-    //Sorting by ones digit
+    //Sorting by ones digit and converting array to linked list
     for (int num : data) {
       if (num < 0) {
         buckets[9 - (Math.abs(num) % 10)].add(num);
@@ -36,7 +36,7 @@ public class Radix {
       bucket.clear();
     }
     int currentDigit = 2; //Stores digit that will be sorted next
-    System.out.println(numbers);
+    //System.out.println(numbers);
 
     while (currentDigit <= length) {
       while (numbers.hasNext()) {
@@ -55,7 +55,7 @@ public class Radix {
         bucket.clear();
       }
       currentDigit++;
-      System.out.println(numbers);
+      //System.out.println(numbers);
     }
 
     //Copy numbers back to data
