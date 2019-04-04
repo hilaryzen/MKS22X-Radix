@@ -1,7 +1,7 @@
 public class Radix {
   public static void radixsort(int[] data) {
-    MyLinkedList<Integer>[] buckets = new MyLinkedList[10];
-    for (int i = 0; i < 10; i++) {
+    MyLinkedList<Integer>[] buckets = new MyLinkedList[20];
+    for (int i = 0; i < 20; i++) {
       buckets[i] = new MyLinkedList<Integer>();
     }
     MyLinkedList<Integer> numbers = new MyLinkedList<Integer>();
@@ -24,7 +24,11 @@ public class Radix {
 
     //Sorting by ones digit
     for (int num : data) {
-      buckets[num % 10].add(num);
+      if (num < 0) {
+        buckets[9 - (num % 10)].add(num);
+      } else {
+        buckets[10 + (num % 10)].add(num);
+      }
     }
     for (MyLinkedList<Integer> bucket : buckets) {
       //System.out.println(bucket); //Debugging

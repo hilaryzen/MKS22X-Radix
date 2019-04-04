@@ -54,7 +54,7 @@ public class Driver {
     }
     */
 
-    int[] data = {3, 22, 4, 19, 11, 9, 42, 20, 107};
+    int[] data = {3, 22, 4, 19, 11, 9, 42, 20, 107, -30};
     Radix.radixsort(data);
     System.out.println("Data: " + Arrays.toString(data));
   }
