@@ -25,9 +25,9 @@ public class Radix {
     //Sorting by ones digit
     for (int num : data) {
       if (num < 0) {
-        buckets[9 - (num % 10)].add(num);
+        buckets[9 - (Math.abs(num) % 10)].add(num);
       } else {
-        buckets[10 + (num % 10)].add(num);
+        buckets[10 + (Math.abs(num) % 10)].add(num);
       }
     }
     for (MyLinkedList<Integer> bucket : buckets) {
@@ -41,7 +41,12 @@ public class Radix {
     while (currentDigit <= length) {
       while (numbers.hasNext()) {
         int num = numbers.next();
-        buckets[(num % (int)Math.pow(10, currentDigit)) / (int)Math.pow(10, currentDigit - 1)].add(num);
+        int digit = (Math.abs(num) % (int)Math.pow(10, currentDigit)) / (int)Math.pow(10, currentDigit - 1);
+        if (num < 0) {
+          buckets[9 - digit].add(num);
+        } else {
+          buckets[10 + digit].add(num);
+        }
       }
       numbers.clear();
       for (MyLinkedList<Integer> bucket : buckets) {
