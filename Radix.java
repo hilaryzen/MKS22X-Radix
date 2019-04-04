@@ -9,7 +9,7 @@ public class Radix {
 
     //Finding length of longest number
     int max = Math.abs(data[0]);
-    int length = 1;
+    int length = 1; //Stores num of digits of longest number
     for (int i = 1; i < data.length; i++) {
       if (Math.abs(data[i]) > max) {
         max = Math.abs(data[i]);
@@ -31,11 +31,22 @@ public class Radix {
       numbers.extend(bucket);
       bucket.clear();
     }
-    length--;
+    int currentDigit = 2; //Stores digit that will be sorted next
     System.out.println(numbers);
 
-    while (length > 0) {
-
+    while (currentDigit <= length) {
+      while (numbers.hasNext()) {
+        int num = numbers.next();
+        buckets[(num % (int)Math.pow(10, currentDigit)) / (int)Math.pow(10, currentDigit - 1)].add(num);
+      }
+      numbers.clear();
+      for (MyLinkedList<Integer> bucket : buckets) {
+        //System.out.println(bucket); //
+        numbers.extend(bucket);
+        bucket.clear();
+      }
+      currentDigit++;
+      System.out.println(numbers);
     }
   }
 }
