@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Driver {
   public static void main(String[] args) {
     /*
@@ -54,5 +56,6 @@ public class Driver {
 
     int[] data = {3, 22, 4, 19, 11, 9, 42, 20, 107};
     Radix.radixsort(data);
+    System.out.println("Data: " + Arrays.toString(data));
   }
 }

@@ -48,5 +48,13 @@ public class Radix {
       currentDigit++;
       System.out.println(numbers);
     }
+
+    //Copy numbers back to data
+    int index = 0;
+    numbers.reset();
+    while (numbers.hasNext()) {
+      data[index] = numbers.next();
+      index++;
+    }
   }
 }

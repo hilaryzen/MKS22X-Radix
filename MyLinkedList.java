@@ -127,14 +127,21 @@ public class MyLinkedList<E> {
     return old;
   }
 
+  //Returns if list has an element left
   public boolean hasNext() {
     return (currentNode != null);
   }
 
+  //Returns value of currentNode and moves to the next
   public E next() {
     E data = currentNode.getData();
     currentNode = currentNode.next();
     return data;
+  }
+
+  //Returns currentNode to the start
+  public void reset() {
+    currentNode = start;
   }
 
 }
