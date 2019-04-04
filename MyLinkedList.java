@@ -95,6 +95,7 @@ public class MyLinkedList<E> {
   public void extend(MyLinkedList<E> other) {
     if (this.size() == 0) {
       start = other.start;
+      currentNode = start;
       end = other.end;
       length = other.size();
       other.length = 0;
@@ -127,12 +128,13 @@ public class MyLinkedList<E> {
   }
 
   public boolean hasNext() {
-    return (currentNode.next() != null);
+    return (currentNode != null);
   }
 
   public E next() {
+    E data = currentNode.getData();
     currentNode = currentNode.next();
-    return currentNode.getData();
+    return data;
   }
 
 }
