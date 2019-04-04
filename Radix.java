@@ -9,17 +9,24 @@ public class Radix {
 
     //Finding length of longest number
     int max = Math.abs(data[0]);
+    int length = 1;
     for (int i = 1; i < data.length; i++) {
       if (Math.abs(data[i]) > max) {
-        max = data[i];
+        max = Math.abs(data[i]);
       }
     }
+    //System.out.println(max);
+    while (max / 10 > 0) {
+      max = max / 10;
+      length++;
+    }
+    System.out.println(length);
 
     for (int num : data) {
       buckets[num % 10].add(num);
     }
     for (MyLinkedList<Integer> bucket : buckets) {
-      System.out.println(bucket); //Debugging
+      //System.out.println(bucket); //Debugging
       numbers.extend(bucket);
     }
     System.out.println(numbers);
