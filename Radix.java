@@ -20,15 +20,22 @@ public class Radix {
       max = max / 10;
       length++;
     }
-    System.out.println(length);
+    //System.out.println(length);
 
+    //Sorting by ones digit
     for (int num : data) {
       buckets[num % 10].add(num);
     }
     for (MyLinkedList<Integer> bucket : buckets) {
       //System.out.println(bucket); //Debugging
       numbers.extend(bucket);
+      bucket.clear();
     }
+    length--;
     System.out.println(numbers);
+
+    while (length > 0) {
+
+    }
   }
 }
